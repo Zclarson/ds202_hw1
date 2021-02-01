@@ -1,0 +1,82 @@
+---
+title: 'Homework #1'
+author: "Zack Larson"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This homework is more or less a tutorial that helps you set up the coding environment used in this course, and familiarizes you with the format of the assignment submission. 
+As a pre-requisite of this homework, first install R, and then the RStudio (the free version of Rstudio Desktop). 
+
+Please respond to all questions. If the question asks you to do something on your laptop and you have finished that, just say "Done". 
+
+1. Create a folder named `ds202_hw1`, and **either** create an RMarkDown file `hw1.Rmd` under this folder **or** move the provided template into this folder. `hw1.Rmd` will include your solutions. The file and folder names are *case-sensitive*, which means `hw1.Rmd` and `HW1.rmd` are different. *It is crucial to follow the exact folder structure and file names* in this course, so that your homework can be reproduced. The correct folder structure is
+
+    ```
+    ds202_hw1
+    |-- hw1.Rmd
+    |-- hw1.html (generated after knitting)
+    ```
+    
+    Answer: Done
+
+2. Write your name in the YAML of your homework `Rmd` file.
+
+    Answer: Done
+
+3. Write a paragraph to introduce yourself. Set your name in bold font and your major in italic. 
+
+    Answer: Hi my name is **Zack Larson** and I am a Junior in *Software Engineering*. I am also pursuing a minor in Data Science. I work at Maverick Software Consulting where I automated tests for a Thomson Reuters web application. Outside of school and work, I enjoy playing golf and watching baseball and football.
+  
+4. Write a paragraph describing a job that you think is related to data science. Include a hyperlink and an image. Make sure your answer is in a nice format to read. 
+
+    Answer: I believe a [data engineer for a sportsbook](https://startup.jobs/data-engineer-at-fanduel-3) is a profession directly related to data science. This job requires you to build data pipelines and models to predict sports outcomes so sports betting companies can set the odds as accurate as possible for them to make a profit. They handle so much data in order to make the predictions and set the odds so the company doesn't lose money on an incorrect data outcome that people take advantage of. All sportsbook companies, like Fanduel, William Hill, and DraftKings have several data engineers to leverage the large amounts of data.
+    
+    
+    ![Fanduel is one of the more popular sportsbooks that hire data engineers](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAvVBMVEUNUf////8ARP8AQf8ATP8AR/8AS/8ASf8ARf8ATv8AP/8APP8APv+Opf/Cz//c4v/Ay/+4x/8PV/9dfv9jhf/3+v8AOf/c4f/i6P/w8/9Ref+Tqf+luP+Bmf8gW//r8P93nP/J1P9bgP9Tef92k/84av+Hqv/Q2f+esf9/o/8AMv/j5/8rYP9Ccf8wZP+Dpv+PsP+KoP8AKP9nj/+tvv9riv+Tp/+puv8AAP89bv9wlf+Utf+Dm/9Qdf9yjf9aJcioAAALV0lEQVR4nO2dC3uiOBeAOSEhBLxBAUGtiAWx3lpndLv20/7/n/UlQa22M7Mz8+yzdep5Z1oJCRFfTi6oUMNAEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEOTzIJhCnK1Ta+jbgpzr4sd0VUAY52uvDDEbd7vd8eJUgFCrAnLuxKr/JYXN5se1N7rorq9+z2f/yc5eHvQOFIHFmYwuy6KMC0Ovig3BLRl0UhpnlkFC4IboDCxDaIP+Y18u0HvpU/BBh+5DUK7bB+RVRKTUV/YXC4Ntn5ac5/lmnBMDUn/XhJa5fOH+MuB8+ZTbJAmlX78vaFEoM/6jv1lQ0ZerFrO+78/8jS91FgVdqHrFpnjX/D8hUl/jSxSRVMZbOglV2D3ZkLpchqALca2AMlJ52UTpozf39vPDYCQ39EcP94+B/VB0Ro+dwW4+Gt0/LvhgdH9f5d4/3F+Bv33j7Te2f5dgJBB0IHXkfyMKwYdmbQGNWxj/3YCi0jcQ/zNqaxl//uOcbEb2fdF5YPZgt3k0yPN6PhJkPZLtdxM45mPx+duv1Jd6Xit6UoHnJzAhYVhT+hwAE5qu1PekBed7ffbz4/OcVn1ff2RJfc+WJfUNOA2+Dp+5WEh9hggG96Pr0JdNbLcOraJU+lwWJlLfF3cMzQjiLzfQGMO2v3v29/os0b953In3+iy6/nozYHQj9dH1/cK4Cn0dKInB69BeQaUPZPRBnADsXIB2CNkCkl4C/bDS5/+v8B86e32PR33ze6Wv/3hT3D9IfV+f+8E1NF4xT1e2nCh7SblK/TI2ebsk8XQ6bRXcGqZJN1656xjioFa25Zxl95Xt7h/W0os/8EV/QJ8X8zWlXzfFV0pvArsYDDojnfsQPC8+vz5DmLZ6sAmxTUFMwzCJYUps+dqpSZjMtkzblBM/okpTQ8jJodrC0j9UyFWH39ZitBBfBzrHotYV2Pt3oZ3RaND/6L34c5Ehxz96HxAEQRAEQRAE+aQI2/4kJ7mc7LH5775hfqxCV/MTG4jZyvscH2/weqOl8VbLOfmtc1C+3FehafyEP5IAwO881cVBMngl3TrfLERVWH2/ihac4v7jc4qNKrf+DOFHGmevvfyWJXqTpGny3agi3i/qM2z9idNn6P3e6IP2N+KPBirnu+H36/ropmwPP8WbVVrf1DSM3XaqX32X6fWUEVOOJmpRkKHKiJilcyxb5Zy0PK0vNl9XUM7lMCSYHEeswzpu69pkDpdRZ0cRUd844OrLMDLrpNPlxDQJP0amqNL7PF2e/dTw9N+g9TUdQ1DujpWlUL1iYc57jTLzcsoNMV/qjx+3y1xmUXu9ytqN1Q05Cqz01Y5V0qC+rA+JP25l3rr69gu1c6/l5Ta7XS7rO2rU5cOMLuTDlsmsrFU3KtGcbltl2Voa1UGUD3WV3lpKoFjKzfq82/Iupt0fo08S6WFEShJGuW+JYU748jiyOAa7S/aJeHGIrErfa6PXQ8nqZt8ZqFJ0Vm2VGqmOb18lhkz3CWZcFbxTgkhweK5c75KZH/YjkH0HVUu7ixq1T/VRPSJ6tsEPjiQv5lFf7NDdSSd36PsrfRGtEJW+7FAqk5HdPx4A5ape6bvR+pLDgQJ50Ozta+116YuMX9M5M6j6eF6X/0Bh55zqM0ylrW2yno6blVYQRreJtpkmJanpUGms4r3nqgqlL+0MNcFCHCYyYfWwEGY1PCX7FWf6XsuNmVjopLfSz7eh1cEKV6uwOlo0PLj0P07YOef6mkqE46gmNo7sSAdDwVzdECemLWZqYV6zI7VVsm+v5yPvmFX64gXzdaQsWRV8Q3PfFN/oe2FWXR8uU+9LapjEVBtmptlW+6Y+FlWHyyOVvnJudD7O1xvO9OlEWONb2UVzi7NI7W5Aq4mLKjOTnX1uWtzUY/F+inKur7vX17cMqr/8N3b0UchlY3TG7/XVZb2u0pXWuErf1RgztfDqu4MzkzFHhWFian2ylxCXM+E+j752FVScRO5dkNe7p/r0vI85E3ET3Na97+rbR99UZeow7rm9w+ZVJ3iubyZ7UKa0hpHuesc9yViJWgTHtK6BWqHe+mNEfZszffrltk3DXDdffZzpI92TUeVUX7q5q5hVfV+mqnTUVLIXaZ26pTvJO31qAGJdrS+AMzr5eXrBlb7bi5pun+qrum7PNnune32qz56e5pzqezfyquJOrPU1jvpqP9S3Ptc13J6niwvXV1upvcxtPeAl420+f6NPNzIo67fr7Tt9b+Z9p/rU0Uj0Uwj4kT797ctdZ8+NoaIv3LymrUvWR90XfZCprSQljs05OdUn/Zgq+FoTxsn6F/S5emDdqdOt/Ef6XD2u97kMYV5zXcfSR49YMs1Uupq4XKC+5hfX5btqBBjbtgrCeEKpezZ0LAg39YzGpVbUfqdPVlHxTh/RWlLDqS3CH+mruap6T46stu5FfFcVH8tegewqkReq74SYVC8GVvOdbstKn573pb16ZW1ZBPrx2yMvuG/12U5VPNufYHxXH79VKxp3xVZ5ktN33Vd4u0KHb4tcavSd2JOnTsI/WxVQg+wzo/Ox8Gf1VUOSIvzR0FEznPKknoJW2x/wL7bxHunpT3DYwdJtWOmr4lH2b87hjeX8n/SVJ/oMfjhVLtIf6jOs7FjNHVMXz7SP4jdWdc67vSh9rNdsNtvqX3uVi/1ZrD1XLyO7m7SbzemdnOObQ68dx/Ikt5bLGWHi+cVU5uxni2w8bas6qp+pqdPqW7yG3ZLpOlefJS2zdvaXiPbRN2224x2/U9up01d+K5e0cDfXwuIx1e/nCHOrZ6DTrrpujpayugt7j5+ZB+zX40qJTBPZauWD3l1qqwJygVdfxhXq4X0V1Vq2Lyv9ySVu9OWp3tJxCKM67GTzM3W99FiJqpXslxxLOObx1EKmKT2kj7tzVejZXouYDtN92+xi3uz8MyB6CA+zUs9bvO9/Zod8E3YcAfTbp8gvYtb373Sm+U98EIe8hZEiX96+zMyLmnb8QQiLc7z4BUEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQ5M/Hppdzu4k/Dk7G0Pu9Wyohwl2r6yfCFxe/jvjriOJwMXPzCm6k/69je4dLmzJ9swtimxZ1JFQ4Mm07jiksnXa4zDTk0uEiFnXLeXXPAcch1XYf+0o+BCcNPXX9SdsLU0f2gy1IgwCSBO78sGXbXhiWsxeVnidLt2xMkjDxVDdpr6aRbPWZkBWEDbVdsr5Cf1EMEK+a6mYriaOuAL9phvMxlGPag6nppO162N6pdAGBC08+PD3pO1eZcWZCWYexD+MtdLswbH//vl+fFeHUW+oqFH1N8x2VTRmGs6FtQF5j0ACXw/LvMo58WEc5+DPIAxARPEl9LnQD8KNwPIT5EIYrCGbBtV1BJvopQOql0hQsHfUX0WYppDM+hA3ppgGwOaQpvJA1zEgPogAWXZClC8rpAtZjiGYQqMtDV24/huTqLj9jvYYad8tGC6BQfw3D35Eh9Ny/wHDCrAf9HHrw5Mgm7ZCyOemC0wgzryCzpSFDL5tOhtBvxO4YjB25O95n6WqwVxB7ctaXSX3zTd+gQ7jtQN1tJdEtpAnsnsIvcdskWWya7TBI2pO0NXHrwRC6WRiVYdBMJmm2K2EHt/PDzfyuB337rrKlDIL++z/MA2hw0vai5moiIGhk0SphJF7ZdJdAPGNhnXPoOrKxB6yQDX1uhiGkQ0dul12bPTlbU/dRUFfYl4uq37cZU7dg4erPlgqbcmbI/yptUMKIMNQdHmXK5nJBraHqbxGp33q7q4PRFWRyyuZcW7f/b2EW3bGN7xf8NoJdX6eFIAiCIAiCIAiCIAjyb/B/CP/sisw2crYAAAAASUVORK5CYII=)
+  
+5. What data topic will you be most interested in? (Optional) Provide a source of such dataset if you have.
+
+    Answer: I will be most interested in the sports data set where we look at stats from the Iowa State Cyclones football season. 
+  
+6. To check that your R and Rstudio installation is correct, find the version of R by entering `version` into the R console. Include this command into a R code trunk in your solution `Rmd` file to have it automatically printed in the knitted html file. 
+```{r}
+version
+``` 
+
+    Answer: Done
+  
+7. Install git. 
+    - If you are on Windows: 
+        a. Install [Git for Windows](https://gitforwindows.org/). In the coming weeks we will use the Git Bash (but not the Git GUI). 
+        b. After installation, set up Rstudio to use Git bash as the shell for the Terminal: Open RStudio, click Tools--Global Options--Terminal; under **Shells**, select Git Bash; click OK. 
+        c. In the main menu of RStudio: click Tools--Terminal--New Terminal. If you have a `$` before your prompt, then you should be good to go.
+    - If you are on Linux or macOS, Git has probably been installed by default, so you do not need to install anything. Just click the Terminal tab (above the R Console).
+
+    Answer: Done
+  
+8. What is the version of your Git? To find out, go to the Terminal tab in RStudio (right to the Console tab), and type in the following command. If it works, this shows that the setup of your terminal and Git is correct. 
+<!-- Then explore the bash command line and Git. -->
+
+    ```
+    git --version
+    ```
+
+    Answer: Done. Version: 2.28.0.windows.1
+  
+9. Configure your git username and user email by modifying and entering the following commands into the terminal
+
+    ```
+    git config --global user.name "your first and last name"
+    git config --global user.email "yourEmail"
+    ```
+
+    Answer: Done
+  
+
+10. Register a [GitHub](https://www.github.com) account. What is your username?
+
+    Answer: Done Username: Zclarson
