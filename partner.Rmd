@@ -1,0 +1,18 @@
+---
+title: 'Partner'
+author: 'Nikole Slinger'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Zack Larson (Zclarson)
+
+In the most recent commit, Zack added 2 files called 'hw1.Rmd' and 'hw1.html'. The commit ID is 03214e72b401c9d60eb25d18a9d581a592435f44.
+
+I was able to knit Zack's 'hw1.Rmd' without any errors.
+
+A tip for making Git/GitHub easier to use would be to make sure that commit messages are meaningful so that people know specifically what each update consisted of.
