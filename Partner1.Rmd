@@ -1,0 +1,22 @@
+---
+title: "Partner1"
+author: "Julia Lundstrum"
+date: "2/4/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Partner's Name: Zack Larson 
+### Username: Zclarson
+
+### Most Recent Commit
+In his most recent commit, he uploaded his initial hw1 files. The commit ID is 03214e72b401c9d60eb25d18a9d581a592435f44.
+
+### Knit rmd file
+I am able to knit his rmd file without any errors.
+
+### Difficulties/errors
+I think right now I'm just not used to github or R, so it's a bit hard to get used to.
